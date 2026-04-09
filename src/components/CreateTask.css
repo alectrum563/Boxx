@@ -1,0 +1,101 @@
+.priority-picker {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.priority-star {
+  font-size: 1.5rem;
+  color: var(--border);
+  transition: color 0.1s, transform 0.1s;
+  padding: 2px;
+  line-height: 1;
+}
+
+.priority-star.active {
+  color: var(--warning);
+}
+
+.priority-star:hover {
+  transform: scale(1.15);
+}
+
+.priority-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+.deadline-row {
+  display: flex;
+  gap: 8px;
+}
+
+.deadline-row input[type="date"] {
+  flex: 1;
+}
+
+.deadline-row input[type="time"] {
+  width: 130px;
+  flex-shrink: 0;
+}
+
+.deadline-row input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.form-error {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--danger);
+  margin-top: 4px;
+}
+
+.link-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.link-row input[type="text"],
+.link-row input[type="url"] {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.link-row input:focus {
+  border-color: var(--accent);
+}
+
+.link-remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.link-remove:hover {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.add-link-btn {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  margin-top: 4px;
+}

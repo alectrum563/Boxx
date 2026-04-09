@@ -1,0 +1,162 @@
+.task-card {
+  flex-shrink: 0;
+  width: 180px;
+  background:
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cat-color, #9ca3af) 55%, transparent),
+      color-mix(in srgb, var(--cat-color, #9ca3af) 16%, transparent)
+    ) border-box;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius);
+  padding: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.1s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-card:not(.task-card--completed):hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+  background:
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cat-color, #9ca3af) 88%, transparent),
+      color-mix(in srgb, var(--cat-color, #9ca3af) 36%, transparent)
+    ) border-box;
+}
+
+.task-card--completed {
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cat-color, #9ca3af) 22%, transparent),
+      color-mix(in srgb, var(--cat-color, #9ca3af) 7%, transparent)
+    ) border-box;
+  cursor: default;
+}
+
+.task-card--completed .task-card-name {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.task-card-done-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.task-card-done-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.task-card-action {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 0.15s, transform 0.1s;
+  border: 1.5px solid transparent;
+}
+
+.task-card-action:hover {
+  transform: scale(1.08);
+}
+
+.task-card-action--restart {
+  background: var(--c-warning-bg);
+  border-color: var(--c-warning-border);
+}
+
+.task-card-action--restart:hover {
+  background: var(--c-warning-hover);
+}
+
+.task-card-action--delete {
+  background: var(--c-danger-bg);
+  border-color: var(--c-danger-border);
+  color: var(--danger);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.task-card-action--delete:hover {
+  background: var(--c-danger-hover);
+}
+
+.task-card-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: var(--text);
+}
+
+.task-card-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.star {
+  font-size: 0.75rem;
+  color: var(--border);
+}
+
+.star.filled {
+  color: color-mix(in srgb, var(--cat-color, #4f8ef7) var(--star-intensity, 100%), var(--border));
+}
+
+.task-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.task-card-deadline {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 2px 7px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.task-card-deadline.urgent {
+  background: var(--c-danger-bg);
+  color: var(--danger);
+  font-weight: 500;
+}
+
+.task-card-finish {
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 3px 5px;
+  border-radius: var(--radius-sm);
+  opacity: 0.4;
+  transition: opacity 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.task-card-finish:hover {
+  opacity: 1;
+  background: var(--c-success-bg);
+}
+
+.task-card-finish--done {
+  opacity: 0.25;
+  cursor: default;
+}

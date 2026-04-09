@@ -1,0 +1,177 @@
+.calendar-view {
+  padding: 24px 32px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header ─────────────────────────────────── */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calendar-month-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 180px;
+  text-align: center;
+}
+
+.cal-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
+.cal-nav-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.cal-today-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  transition: background 0.15s, color 0.15s;
+}
+
+.cal-today-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── No-deadline note ───────────────────────── */
+.calendar-no-deadline-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  margin-bottom: 12px;
+}
+
+/* ── Grid ───────────────────────────────────── */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--border);
+  gap: 1px;
+}
+
+.calendar-dow {
+  background: var(--bg);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
+
+.calendar-cell {
+  background: var(--card-bg);
+  min-height: 110px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.calendar-cell--other {
+  background: var(--bg);
+}
+
+.calendar-cell--other .calendar-day-num {
+  color: var(--text-muted);
+  opacity: 0.45;
+}
+
+.calendar-cell--today .calendar-day-num {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.calendar-day-num {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Task chips ─────────────────────────────── */
+.calendar-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.calendar-chip {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 3px 6px;
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--text);
+  border-left: 3px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.12s, background 0.12s;
+  cursor: pointer;
+}
+
+.calendar-chip:hover {
+  opacity: 0.8;
+  background: var(--border);
+}
+
+.chip--done {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.chip--overdue {
+  background: var(--c-danger-bg);
+  color: var(--danger);
+  border-left-color: var(--danger) !important;
+}
